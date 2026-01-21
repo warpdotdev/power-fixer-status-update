@@ -11,7 +11,7 @@ Usage:
 
 Required environment variables:
     POWERFIXER_CALLBACK_TOKEN - Authentication token for the callback API
-    POWERFIXER_CALLBACK_URL - Base URL of the PowerFixer server
+    POWERFIXER_CALLBACK_URL - Full URL of the PowerFixer callback endpoint
 """
 import json
 import os
@@ -22,8 +22,7 @@ import urllib.request
 def post_status(payload):
     """Post a status update to the PowerFixer callback API."""
     token = os.environ["POWERFIXER_CALLBACK_TOKEN"]
-    base = os.environ["POWERFIXER_CALLBACK_URL"].rstrip("/")
-    url = base + "/api/v1/agent/status"
+    url = os.environ["POWERFIXER_CALLBACK_URL"]
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         url,

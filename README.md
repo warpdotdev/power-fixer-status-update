@@ -29,7 +29,7 @@ echo '{"state": "IN_PROGRESS"}' | python3 /workspace/power-fixer-status-update/p
 ## Required Environment Variables
 
 - `POWERFIXER_CALLBACK_TOKEN` - Authentication token for the callback API
-- `POWERFIXER_CALLBACK_URL` - Base URL of the PowerFixer server (e.g., `https://powerfixer.warp.dev`)
+- `POWERFIXER_CALLBACK_URL` - Full URL of the PowerFixer callback endpoint (e.g., `https://powerfixer.warp.dev/api/v1/agent/runs/abc123/callback`)
 
 ## Valid States
 
